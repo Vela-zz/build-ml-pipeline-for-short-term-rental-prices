@@ -1,5 +1,5 @@
-import pytest
 import pandas as pd
+import pytest
 import wandb
 
 
@@ -15,7 +15,8 @@ def pytest_addoption(parser):
 def data(request):
     run = wandb.init(job_type="data_tests", resume=True)
 
-    # Download input artifact. This will also note that this script is using this
+    # Download input artifact.
+    # This will also note that this script is using this
     # particular version of the artifact
     data_path = run.use_artifact(request.config.option.csv).file()
 
@@ -31,7 +32,8 @@ def data(request):
 def ref_data(request):
     run = wandb.init(job_type="data_tests", resume=True)
 
-    # Download input artifact. This will also note that this script is using this
+    # Download input artifact.
+    # This will also note that this script is using this
     # particular version of the artifact
     data_path = run.use_artifact(request.config.option.ref).file()
 
