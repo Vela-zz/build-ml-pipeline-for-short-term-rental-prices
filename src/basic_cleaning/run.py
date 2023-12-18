@@ -58,7 +58,7 @@ def go(args):
         max_calculated_host_listings_count)  # NOQA:E501
     df = df[idx].copy()
     # Drop longitude
-    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)  # NOQA:E501
     df = df[idx].copy()
     # Drop NA
     df = df.dropna(axis=0)
