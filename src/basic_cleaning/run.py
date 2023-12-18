@@ -57,7 +57,10 @@ def go(args):
         min_calculated_host_listings_count,  # NOQA:E501
         max_calculated_host_listings_count)  # NOQA:E501
     df = df[idx].copy()
-    # Drop na
+    # Drop longitude
+    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    df = df[idx].copy()
+    # Drop NA
     df = df.dropna(axis=0)
     # Convert last_review to datetime
     df['last_review'] = pd.to_datetime(df['last_review'])
