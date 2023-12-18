@@ -3,4 +3,4 @@ conda_env: conda.yml
 
 entry_points:
   main:
-    command: jupyter notebook
+    command: jupyter notebook --port 5000 --no-browser --ip='*' --NotebookApp.token='' --NotebookApp.password=''
