@@ -110,7 +110,6 @@ def go(config: DictConfig):
                     "rf_config": rf_config,
                     "max_tfidf_features": config['modeling']['max_tfidf_features'],  # NOQA:E501
                     "output_artifact": "random_forest_export"
-                    
                 },
             )
 
